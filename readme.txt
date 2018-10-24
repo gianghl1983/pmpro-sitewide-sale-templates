@@ -13,7 +13,7 @@ This plugin requires Paid Memberships Pro, Memberlite, and the Sitewide Sale Add
 
 If you are using the default [pmpro_sws] shortcode on your Sitewide Sale's associated Landing Page, you can use this plugin to add the attribute "template" and specify a design from the included layouts.
 
-Included shortcode values for the "template" attribute include: neon, ocean.
+Included shortcode values for the "template" attribute include: 'gradient', 'neon', 'ocean', or 'photo'.
 
 == Installation ==
 

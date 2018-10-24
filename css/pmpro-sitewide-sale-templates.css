@@ -1,0 +1,125 @@
+.pmpro_sitewide_sale_landing_page_template {
+}
+.pmpro_sitewide_sale_landing_page_template #pmpro_form {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+/* Neon Theme */
+#pmpro_sitewide_sale_landing_page_template-neon {
+	background: #000 url(../images/darkness.png) repeat;
+    padding: 5.8rem 0;
+    height: 100%;
+}
+#pmpro_sitewide_sale_landing_page_template-neon #pmpro_form {
+    max-width: 800px;
+}
+#pmpro_sitewide_sale_landing_page_template-neon hr {
+	background-color: #666;
+}
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content_pre-sale,
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content_post-sale {
+    color: #FFF;
+    margin: 5.8rem;
+    text-align: center;
+}
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content {
+	color: #FFF;
+}
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content h1 {
+	font-weight: 700;
+	margin-top: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content h2 {
+	animation-name: neonblink;
+    animation-duration: 4s;
+    animation-direction: alternate-reverse;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	color: #55f47e;
+	font-family: 'Courier', sans-serif;
+	font-size: 60px;
+	font-style: italic;
+    font-weight: 900;
+	line-height: 75px;
+    letter-spacing: -4px;
+	margin: 0;
+	text-shadow: 0px 0px 15px #BBB;
+}
+#pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content h3 {
+	animation-name: neonblink2;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	color: #f084e7;
+    font-family: 'Courier', sans-serif;
+	font-size: 40px;
+	font-style: italic;
+    font-weight: 900;
+    letter-spacing: -4px;
+	margin: 0 0 1em 0;
+	text-shadow: 0px 0px 15px #BBB;
+}
+@keyframes neonblink {
+	0%{opacity: 1;}
+	2%{opacity: 0;}
+	4%{opacity: 1;}
+	80%{opacity: 1;}
+	82%{opacity: 0;}
+	84%{opacity: 1;}
+	100%{opacity: 1;}
+}
+@keyframes neonblink2 {
+	0%{opacity: 1;}
+	5%{opacity: 0;}
+	10%{opacity: 1;}
+	15%{opacity: 0;}
+	20%{opacity: 1;}
+	90%{opacity: 1;}
+	95%{opacity: 0;}
+	100%{opacity: 1;}
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout {
+	background: #FFF;
+	margin: 2em 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout h3 {
+	background: #0EBFE9;
+	border: none;
+    color: #FFF;
+	margin: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout h3 span.pmpro_checkout-h3-msg a {
+    color: #FFF;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout .pmpro_checkout-fields {
+	margin: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout .pmpro_sslseal {
+	text-align: center;
+}
+
+
+/*
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form #pmpro_bfcm_select .pmpro_checkout-fields div {
+	margin: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form #pmpro_bfcm_select h2,
+.page-template-template-2018-summer form#pmpro_form #pmpro_levels_select h2 {
+	margin: .5em 0 0 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form #pmpro_bfcm_select .pmpro_checkout-fields {
+	padding: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form #pmpro_payment_method a.pmpro_radio {
+	font-weight: bold;
+	text-decoration: none;
+}
+@media only screen and (max-width: 767px) {
+	#pmpro_sitewide_sale_landing_page_template-neon form#pmpro_form .pmpro_checkout .pmpro_checkout-fields {
+		padding: 1em;
+	}
+}
+*/

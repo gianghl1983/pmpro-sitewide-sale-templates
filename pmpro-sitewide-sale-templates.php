@@ -59,19 +59,3 @@ function pmproswst_pmpro_sws_landing_page_content( $r, $atts ) {
 	return $r;
 }
 add_filter( 'pmpro_sws_landing_page_content', 'pmproswst_pmpro_sws_landing_page_content', 10, 2 );
-
-function pmproswst_pmpro_sws_landing_page_content_before( $atts ) {
-	$template = $atts[ 'template' ];
-	if ( ! empty( $template ) ) { ?>
-		<div id="pmpro_sitewide_sale_landing_page_template-<?php esc_html_e( $template ); ?>" class="pmpro_sitewide_sale_landing_page_template">
-	<?php }
-}
-//add_action( 'pmpro_sws_landing_page_content_before', 'pmproswst_pmpro_sws_landing_page_content_before' );
-
-function pmproswst_pmpro_sws_landing_page_content_after( $atts ) {
-	$template = $atts[ 'template' ];
-	if ( ! empty( $template ) ) { ?>
-		</div>
-	<?php }
-}
-//add_action( 'pmpro_sws_landing_page_content_after', 'pmproswst_pmpro_sws_landing_page_content_after' );

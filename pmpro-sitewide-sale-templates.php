@@ -23,7 +23,7 @@ function pmproswst_shortcode_atts( $out, $default_atts, $atts, $shortcode  ) {
 }
 add_filter( 'shortcode_atts_pmpro_sws', 'pmproswst_shortcode_atts', 10, 4 );
 
-function my_memberlite_before_content() {
+function pmproswst_body_class( $classes ) {
 	global $post;
     $pattern = get_shortcode_regex();
 	if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
@@ -35,19 +35,26 @@ function my_memberlite_before_content() {
 		$shortcode_string = str_replace( "[pmpro_sws", "", $shortcode_string );
 		$shortcode_string = substr( $shortcode_string, 0, strlen($shortcode_string) - 1 );
 		$atts = shortcode_parse_atts( $shortcode_string );
-		d( $atts['template'] );
+		$template = $atts['template'];
+		if ( ! empty( $template ) ) {
+			$classes[] = 'pmpro-sitewide-sale-landing-page-' . $template;
+		}
     }
+	
+	return $classes;
 }
-add_action( 'memberlite_before_content', 'my_memberlite_before_content' );
+add_filter( 'body_class', 'pmproswst_body_class', 15 );
 
 function pmproswst_pmpro_sws_landing_page_content( $r, $atts ) {
-	$template = $atts[ 'template' ];
-	if ( ! empty( $template ) ) {
+	if( ! empty( $atts ) ) {
+		$template = $atts[ 'template' ];
+	}
+	if ( isset( $template ) ) {
 		$newcontent = '<div id="pmpro_sitewide_sale_landing_page_template-' . esc_html( $template ) . '" class="pmpro_sitewide_sale_landing_page_template">';
 		$newcontent .= $r;
 		$newcontent .= '</div>';
+		$r = $newcontent;
 	}
-	$r = $newcontent;
 	
 	return $r;
 }

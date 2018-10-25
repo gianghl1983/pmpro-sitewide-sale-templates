@@ -23,24 +23,34 @@ function pmproswst_shortcode_atts( $out, $default_atts, $atts, $shortcode  ) {
 }
 add_filter( 'shortcode_atts_pmpro_sws', 'pmproswst_shortcode_atts', 10, 4 );
 
+function pmproswst_memberlite_before_content( ) {
+	global $post;
+	if ( preg_match_all( '/' . get_shortcode_regex() . '/s', $post->post_content, $matches, PREG_SET_ORDER ) ) {
+		foreach ( $matches as $shortcode ) {
+			if ( 'pmpro_sws' === $shortcode[2] ) {
+				$shortcode_atts = shortcode_parse_atts( $shortcode[3] );
+				if ( ! empty( $shortcode_atts['template'] ) ) {
+					$classes[] = 'pmpro-sitewide-sale-landing-page-' . $shortcode_atts['template'];
+				}
+			}
+		}
+	}
+}
+//add_action( 'memberlite_before_content', 'pmproswst_memberlite_before_content' );
+
 function pmproswst_body_class( $classes ) {
 	global $post;
     $pattern = get_shortcode_regex();
-	if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
-        && array_key_exists( 2, $matches )
-        && in_array( 'pmpro_sws', $matches[2] ) )
-    {
-        // shortcode is being used
-		$shortcode_string = $matches[0][0];
-		$shortcode_string = str_replace( "[pmpro_sws", "", $shortcode_string );
-		$shortcode_string = substr( $shortcode_string, 0, strlen($shortcode_string) - 1 );
-		$atts = shortcode_parse_atts( $shortcode_string );
-		$template = $atts['template'];
-		if ( ! empty( $template ) ) {
-			$classes[] = 'pmpro-sitewide-sale-landing-page-' . $template;
+	if ( preg_match_all( '/' . get_shortcode_regex() . '/s', $post->post_content, $matches, PREG_SET_ORDER ) ) {
+		foreach ( $matches as $shortcode ) {
+			if ( 'pmpro_sws' === $shortcode[2] ) {
+				$shortcode_atts = shortcode_parse_atts( $shortcode[3] );
+				if ( ! empty( $shortcode_atts['template'] ) ) {
+					$classes[] = 'pmpro-sitewide-sale-landing-page-' . $shortcode_atts['template'];
+				}
+			}
 		}
-    }
-	
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'pmproswst_body_class', 15 );

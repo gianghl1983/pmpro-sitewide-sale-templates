@@ -87,7 +87,7 @@ body.pmpro-sitewide-sale-landing-page-neon {
 	margin-top: 0;
 }
 #pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content h2 {
-	animation-name: neonblink;
+	animation-name: SWSNeon;
     animation-duration: 4s;
     animation-direction: alternate-reverse;
 	animation-iteration-count: infinite;
@@ -103,7 +103,7 @@ body.pmpro-sitewide-sale-landing-page-neon {
 	text-shadow: 0px 0px 15px #BBB;
 }
 #pmpro_sitewide_sale_landing_page_template-neon .pmpro_sws_landing_content h3 {
-	animation-name: neonblink2;
+	animation-name: SWSNeon2;
     animation-delay: 1s;
     animation-duration: 1s;
     animation-direction: alternate-reverse;
@@ -118,7 +118,7 @@ body.pmpro-sitewide-sale-landing-page-neon {
 	margin: 0 0 1em 0;
 	text-shadow: 0px 0px 15px #BBB;
 }
-@keyframes neonblink {
+@keyframes SWSNeon {
 	0%{opacity: 1;}
 	2%{opacity: 0;}
 	4%{opacity: 1;}
@@ -127,7 +127,7 @@ body.pmpro-sitewide-sale-landing-page-neon {
 	84%{opacity: 1;}
 	100%{opacity: 1;}
 }
-@keyframes neonblink2 {
+@keyframes SWSNeon2 {
 	0%{opacity: 1;}
 	5%{opacity: 0;}
 	10%{opacity: 1;}
@@ -245,3 +245,72 @@ body.pmpro-sitewide-sale-landing-page-photo .masthead h1 {
     line-height: 7.5rem;
     padding: .9rem;
 }
+
+/* Scroll Theme */
+body.pmpro-sitewide-sale-landing-page-scroll {
+	background: #E4E3DF;
+    padding: 0 0 5.8rem 0;
+}
+body.pmpro-sitewide-sale-landing-page-scroll .entry-content .banner {
+    background-position: center top; 
+    border-bottom: 1px solid #CCC;
+    overflow: hidden;
+    padding: 2.9rem 0 17.4rem 0;
+}
+body.pmpro-sitewide-sale-landing-page-scroll .entry-content .banner .row {
+    background: rgba( 255, 255, 255, 0.3 );
+}
+body.pmpro-sitewide-sale-landing-page-scroll .entry-content .banner h1 {
+    animation: SWSScroll 1s;   
+    font-size: 5.2rem; 
+}
+body.pmpro-sitewide-sale-landing-page-scroll .entry-content .banner h3 {
+    animation: SWSFadeIn 3s;
+}
+@keyframes SWSScroll {
+    from {
+        margin-left: 100%;
+        width: 300%; 
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+@keyframes SWSFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#pmpro_sitewide_sale_landing_page_template-scroll {
+    margin: 2.9rem 0 0 0;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form {
+    max-width: 750px;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form hr {
+	display: none;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form .pmpro_checkout {
+    background: #FFF;
+    border: 1px solid #CCC;
+    margin-bottom: 2.9rem;
+    padding: 2.9rem;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form .pmpro_checkout h3 {
+    background: none;
+    border: none;
+    padding: 0;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form .pmpro_checkout h3 span.pmpro_checkout-h3-name {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#pmpro_sitewide_sale_landing_page_template-scroll #pmpro_form .pmpro_checkout .pmpro_checkout-fields {
+    padding:  0;
+}
+
+

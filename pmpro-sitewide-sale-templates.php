@@ -61,8 +61,18 @@ function pmproswst_pmpro_sws_landing_page_content( $r, $atts ) {
 	}
 	if ( isset( $template ) ) {
 		$newcontent = '<div id="pmpro_sitewide_sale_landing_page_template-' . esc_html( $template ) . '" class="pmpro_sitewide_sale_landing_page_template">';
-		$newcontent .= $r;
-		$newcontent .= '</div>';
+		if ( in_array( $template, array( 'photo', 'scroll' ) ) ) {
+			$background_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_queried_object_id() ), 'full' );
+			if( ! empty( $background_image[0] ) ) {
+				$newcontent .= '<div class="pmpro_sitewide_sale_landing_page_template-background-image" style="background-image: url(' . $background_image[0] . ')">';
+				$newcontent .= $r;
+				$newcontent .= '</div> <!-- .pmpro_sitewide_sale_landing_page_template-background-image -->';
+				$newcontent .= '</div> <!-- .pmpro_sitewide_sale_landing_page_template -->';
+			}
+		} else {
+			$newcontent .= $r;
+			$newcontent .= '</div> <!-- .pmpro_sitewide_sale_landing_page_template -->';
+		}
 		$r = $newcontent;
 	}
 	
